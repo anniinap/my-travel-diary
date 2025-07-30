@@ -24,3 +24,5 @@ export async function createMarker(map, place) {
         });
     })
 
+    return {marker, infoWindow}
+}
