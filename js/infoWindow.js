@@ -30,7 +30,6 @@ export async function createInfoWindow(marker, map) {
         const date = "";
         const text = "";
 
-        // Luodaan lomake ja asetetaan se InfoWindowin sisällöksi
         const formWindow = createFormWindow(infoWindow, title, date, text, marker, map);
         infoWindow.setContent(formWindow);
     });
