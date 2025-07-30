@@ -10,14 +10,11 @@ export async function createMap() {
 
   // luodaan uusi karttaolio ja asetetaan se muuuttujaan maps
     map = new Map(document.getElementById("map"), {
-        zoom: 2,
+        zoom: 4,
         center: position,
         mapId: "186797d3c49057b2c38b4ab9",
     });
-}
 
-// funktio palauttaa kartaolion myöhempää käyttöä varten
-export function getMap() {
     return map;
 }
 

@@ -1,17 +1,13 @@
-import { createMap, getMap } from "./js/map.js";
-import { findPlace} from "./js/search.js";
+import { createMap} from "./js/map.js";
+import { createAutoComlete} from "./js/autoComplete.js";
+import { loadPreviousLogs } from "./js/loadPreviusLogs.js";
 
+async function initApp() {
+  const map = await createMap();  
+  await createAutoComlete(map);   
+  loadPreviousLogs(map);    
+}
 
-// tapahtumankuuntelija paikanhaku formille
-const searchForm = document.getElementById("search-form");
-searchForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const map = getMap();
-  await findPlace(map);
-});
-
-
-// kutsutaan funkiota joka renderöi kartan ensimmäisen kerran
-createMap();
+initApp();
 
 
